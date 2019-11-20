@@ -1,0 +1,12 @@
+{
+  "xsappname": "movielens",
+  "scopes": [{
+    "name": "$XSAPPNAME.USER",
+    "description": "MovieLens User Application Scope"
+  }],
+  "role-templates": [{
+    "name": "user",
+    "description" : "MovieLens User Role Template",
+    "scope-references": ["$XSAPPNAME.USER"]
+  }]
+}

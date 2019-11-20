@@ -16,6 +16,7 @@ modules:
           url: '${default-url}'
     requires:
       - name: hdi_db
+      - name: movielens-uaa
   - name: html
     type: html5
     path: html
@@ -26,6 +27,8 @@ modules:
           name: movielens_api
           url: '~{url}'
           timeout: 3000000
+          forwardAuthToken: true
+      - name: movielens-uaa
 resources:
   - name: hdi_db
     parameters:
@@ -34,3 +37,7 @@ resources:
     properties:
       hdi-container-name: '${service-name}'
     type: com.sap.xs.hdi-container
+  - name: movielens-uaa
+    type: com.sap.xs.uaa-space
+    parameters:
+      path: ./xs-security.json
